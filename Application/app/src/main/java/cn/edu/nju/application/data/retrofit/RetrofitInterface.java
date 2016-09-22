@@ -1,13 +1,11 @@
 package cn.edu.nju.application.data.retrofit;
 
-import retrofit2.http.POST;
-import retrofit2.http.Query;
+import retrofit2.http.GET;
 
 /**
  * Created by tjDu on 2016/9/22.
  */
 public interface RetrofitInterface {
-    @POST("/user.php")
-    boolean login(@Query("username") String username,
-                  @Query("password") String password);
+    @GET("/addUser.php")
+    boolean login();
 }
