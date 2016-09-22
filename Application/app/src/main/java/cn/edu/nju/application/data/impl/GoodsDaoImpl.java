@@ -1,4 +1,4 @@
-package cn.edu.nju.application.data.impl;
+package cn.edu.nju.application.data.Impl;
 
 import cn.edu.nju.application.data.IGoodsDao;
 
