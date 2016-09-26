@@ -2,6 +2,7 @@ package cn.edu.nju.application.data;
 
 import android.util.Log;
 
+import java.io.IOException;
 import java.util.List;
 
 import cn.edu.nju.application.data.retrofit.RetrofitServiceFactory;
@@ -28,19 +29,15 @@ public class UserDaoImpl implements IUserDao {
 
     @Override
     public User showUserInfo(String username, String password) {
-        Call<String> value = service.authenticate(username,password);
-        value.enqueue(new Callback<String>(){
-            @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                String re = response.body();
-            }
-
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                Log.d("TJTEST",t.getMessage());
-            }
-        });
-        return null;
+        Call<User> value = service.authenticate(username,password);
+        User result = null;
+        try {
+            Response<User> test = value.execute();
+            result = test.body();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     @Override

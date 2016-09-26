@@ -1,16 +1,24 @@
 package cn.edu.nju.application.presentation.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by phoebegl on 16/9/21.
  */
 public class User{
-
+    @SerializedName("username")
     private String username;
+    @SerializedName("password")
     private String password;
+    @SerializedName("gender")
     private String gender;
+    @SerializedName("address")
     private String address;
+    @SerializedName("credit")
     private int credit;
+    @SerializedName("avatar")
     private Byte[] avatar;
+    @SerializedName("email")
     private String email;
 
     public String getUsername() {

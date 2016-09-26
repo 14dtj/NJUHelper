@@ -2,6 +2,8 @@ package cn.edu.nju.application;
 
 import org.junit.Test;
 
+import cn.edu.nju.application.data.UserDaoImpl;
+
 import static org.junit.Assert.*;
 
 /**
@@ -10,6 +12,7 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+        UserDaoImpl  dao = new UserDaoImpl();
+        System.out.println(dao.showUserInfo("tj","123456").getEmail());
     }
 }

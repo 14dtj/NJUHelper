@@ -1,5 +1,6 @@
 package cn.edu.nju.application.data.retrofit;
 
+import cn.edu.nju.application.presentation.model.User;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -10,5 +11,5 @@ import retrofit2.http.Path;
  */
 public interface RetrofitUserInterface {
     @GET("user/{username}/{pwd}")
-    Call<String> authenticate(@Path("username") String username, @Path("pwd") String password);
+    Call<User> authenticate(@Path("username") String username, @Path("pwd") String password);
 }
