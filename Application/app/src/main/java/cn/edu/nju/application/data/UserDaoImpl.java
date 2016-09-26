@@ -1,24 +1,26 @@
-package cn.edu.nju.application.data.impl;
+package cn.edu.nju.application.data;
+
+import android.util.Log;
 
 import java.util.List;
 
-import cn.edu.nju.application.data.IUserDao;
-import cn.edu.nju.application.data.retrofit.RetrofitInterface;
-import cn.edu.nju.application.data.retrofit.RetrofitService;
+import cn.edu.nju.application.data.retrofit.RetrofitServiceFactory;
+import cn.edu.nju.application.data.retrofit.RetrofitUserInterface;
 import cn.edu.nju.application.presentation.model.Post;
 import cn.edu.nju.application.presentation.model.User;
 import cn.edu.nju.application.presentation.model.UserCollect;
 import cn.edu.nju.application.presentation.model.UserFollower;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
- * Created by tjDu on 2016/9/22.
+ * Created by tjDu on 2016/9/23.
  */
 public class UserDaoImpl implements IUserDao {
-    private RetrofitInterface service;
-    public UserDaoImpl(){
-        RetrofitService helper = new RetrofitService();
-        service = helper.getService();
-    }
+    private RetrofitUserInterface service;
+    public UserDaoImpl(){ service = RetrofitServiceFactory.getService();}
+
     @Override
     public int signUp(User user) {
         return 0;
@@ -26,7 +28,18 @@ public class UserDaoImpl implements IUserDao {
 
     @Override
     public User showUserInfo(String username, String password) {
-       service.login();
+        Call<String> value = service.authenticate(username,password);
+        value.enqueue(new Callback<String>(){
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                String re = response.body();
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Log.d("TJTEST",t.getMessage());
+            }
+        });
         return null;
     }
 
