@@ -5,6 +5,7 @@ import android.util.Log;
 import java.io.IOException;
 import java.util.List;
 
+import cn.edu.nju.application.data.response.InsertResponse;
 import cn.edu.nju.application.data.retrofit.RetrofitServiceFactory;
 import cn.edu.nju.application.data.retrofit.RetrofitUserInterface;
 import cn.edu.nju.application.presentation.model.Post;
@@ -24,7 +25,15 @@ public class UserDaoImpl implements IUserDao {
 
     @Override
     public int signUp(User user) {
-        return 0;
+        Call<InsertResponse> value = service.register(user);
+        int result = 0;
+        try {
+            Response<InsertResponse> response = value.execute();
+            result = response.body().isSuccess();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     @Override
