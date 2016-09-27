@@ -24,7 +24,7 @@ public interface IPostDao {
      * @param id
      * @return
      */
-    int deletePost(String id);
+    int deletePost(int id);
 
     /**
      * 编辑原贴

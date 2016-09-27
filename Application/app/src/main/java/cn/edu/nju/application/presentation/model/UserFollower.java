@@ -1,20 +1,15 @@
 package cn.edu.nju.application.presentation.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by phoebegl on 16/9/21.
  */
 public class UserFollower {
-
-    private String username;
+    @SerializedName("followerName")
     private String followerName;
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
+    @SerializedName("avatar")
+    private Byte[] avatar;
 
     public String getFollowerName() {
         return followerName;
@@ -24,4 +19,15 @@ public class UserFollower {
         this.followerName = followerName;
     }
 
+    public UserFollower(String username) {
+        this.followerName = username;
+    }
+
+    public Byte[] getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(Byte[] avatar) {
+        this.avatar = avatar;
+    }
 }

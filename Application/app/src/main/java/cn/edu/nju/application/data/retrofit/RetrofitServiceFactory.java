@@ -9,7 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitServiceFactory {
     public static final String BASE_URL = "http://115.28.181.96/";
     private static RetrofitUserInterface retrofitUserInterface;
-    public static RetrofitUserInterface getService(){
+    private static RetrofitPostInterface retrofitPostInterface;
+    public static RetrofitUserInterface getUserService(){
         if(retrofitUserInterface ==null){
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
@@ -18,5 +19,15 @@ public class RetrofitServiceFactory {
             retrofitUserInterface = retrofit.create(RetrofitUserInterface.class);
         }
         return retrofitUserInterface;
+    }
+    public static RetrofitPostInterface getPostService(){
+        if(retrofitPostInterface ==null){
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            retrofitPostInterface = retrofit.create(RetrofitPostInterface.class);
+        }
+        return retrofitPostInterface;
     }
 }

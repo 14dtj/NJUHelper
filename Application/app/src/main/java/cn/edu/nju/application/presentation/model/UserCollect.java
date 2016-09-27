@@ -1,13 +1,16 @@
 package cn.edu.nju.application.presentation.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by phoebegl on 16/9/21.
  * 用户收藏列表
  */
 public class UserCollect {
-
+    @SerializedName("username")
     private String username;
-    private int postId;
+    @SerializedName("title")
+    private String title;
 
     public String getUsername() {
         return username;
@@ -17,12 +20,16 @@ public class UserCollect {
         this.username = username;
     }
 
-    public int getPostId() {
-        return postId;
+    public String getTitle() {
+        return title;
     }
 
-    public void setPostId(int postId) {
-        this.postId = postId;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
+    public UserCollect(String username, String title) {
+        this.username = username;
+        this.title = title;
+    }
 }

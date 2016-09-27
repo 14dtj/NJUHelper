@@ -1,19 +1,29 @@
 package cn.edu.nju.application.presentation.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by phoebegl on 16/9/21.
  * 帖子的对应model
  */
 public class Post {
-
+    @SerializedName("id")
     private int id;
+    @SerializedName("username")
     private String authorName;
+    @SerializedName("content")
     private String content;
+    @SerializedName("title")
     private String title;
+    @SerializedName("image")
     private Byte[] image;
+    @SerializedName("state")
     private boolean state;
+    @SerializedName("star_num")
     private int star_num;
+    @SerializedName("collect_num")
     private int collect_num;
+    @SerializedName("catelog")
     private String catelog;
 
     public int getCollect_num() {
@@ -85,6 +95,17 @@ public class Post {
     }
 
     public void setCatelog(String catelog) {
+        this.catelog = catelog;
+    }
+
+    public Post(String authorName, String content, String title, Byte[] image, boolean state,String catelog) {
+        this.authorName = authorName;
+        this.content = content;
+        this.title = title;
+        this.image = image;
+        this.state = state;
+        this.star_num = 0;
+        this.collect_num = 0;
         this.catelog = catelog;
     }
 }
