@@ -6,8 +6,10 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
 
 import cn.edu.nju.application.R;
+import cn.edu.nju.application.presentation.view.component.HeadPanel;
 import cn.edu.nju.application.presentation.view.element.Constant;
 import cn.edu.nju.application.presentation.view.component.BottomPanel;
 import cn.edu.nju.application.presentation.view.fragment.BaseFragment;
@@ -15,6 +17,7 @@ import cn.edu.nju.application.presentation.view.fragment.BaseFragment;
 public class MainActivity extends Activity implements BottomPanel.BottomPanelCall{
 
     private BottomPanel bottomPanel = null;
+    private HeadPanel headPanel = null;
     private FragmentManager fragmentManager = null;
     private FragmentTransaction fragmentTransaction = null;
 
@@ -30,10 +33,15 @@ public class MainActivity extends Activity implements BottomPanel.BottomPanelCal
     }
 
     private void initUI(){
-        bottomPanel = (BottomPanel)findViewById(R.id.bottom);
+        bottomPanel = (BottomPanel)findViewById(R.id.bottom_layout);
         if(bottomPanel != null){
             bottomPanel.init();
             bottomPanel.setBottomCall(this);
+        }
+
+        headPanel = (HeadPanel)findViewById(R.id.head_layout);
+        if(headPanel != null) {
+            headPanel.init();
         }
     }
 
@@ -51,6 +59,7 @@ public class MainActivity extends Activity implements BottomPanel.BottomPanelCal
             tag = Constant.FRAGMENT_USER;
         }
         setTabSelection(tag); //切换Fragment
+        headPanel.setMiddleTitle(tag);
     }
 
     /**切换fragment

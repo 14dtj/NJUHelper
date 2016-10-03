@@ -2,7 +2,10 @@ package cn.edu.nju.application.presentation.view.element;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -31,15 +34,15 @@ public class ImageText extends LinearLayout{
         // TODO Auto-generated constructor stub
         context = c;
     }
-//    public ImageText(Context c, AttributeSet attrs) {
-//        super(c, attrs);
-//        // TODO Auto-generated constructor stub
-//        context = c;
-//        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        View parentView = inflater.inflate(R.layout.image_text_layout, this, true);
-//        mImageView = (ImageView)findViewById(R.id.image_iamge_text);
-//        mTextView = (TextView)findViewById(R.id.text_iamge_text);
-//    }
+    public ImageText(Context c, AttributeSet attrs) {
+        super(c, attrs);
+        // TODO Auto-generated constructor stub
+        context = c;
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View parentView = inflater.inflate(R.layout.imagetext_layout, this, true);
+        imageView = (ImageView)findViewById(R.id.it_image);
+        textView = (TextView)findViewById(R.id.it_text);
+    }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
@@ -96,10 +99,5 @@ public class ImageText extends LinearLayout{
             imageView.setImageResource(selectID);
         }
     }
-
-
-
-
-
 
 }
