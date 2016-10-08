@@ -1,6 +1,7 @@
 package cn.edu.nju.application.service.impl;
 
 import cn.edu.nju.application.data.IUserDao;
+import cn.edu.nju.application.data.UserDaoImpl;
 import cn.edu.nju.application.presentation.model.User;
 import cn.edu.nju.application.presentation.presenter.SignUpPresenter;
 import cn.edu.nju.application.service.SignUpService;
@@ -12,6 +13,10 @@ import cn.edu.nju.application.service.SignUpService;
 public class SignUpServiceImpl implements SignUpService {
 
     private IUserDao userDao;
+
+    public SignUpServiceImpl() {
+        userDao = new UserDaoImpl();
+    }
 
     @Override
     public void signUp(User user, OnSignUpFinishedListener listener) {

@@ -3,6 +3,7 @@ package cn.edu.nju.application.presentation.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +36,8 @@ public class SignUpActivity extends Activity implements SignUpView,View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
         progress = (ProgressBar)findViewById(R.id.progressBar);
         username = (EditText)findViewById(R.id.username);
@@ -77,6 +80,7 @@ public class SignUpActivity extends Activity implements SignUpView,View.OnClickL
 
     @Override
     public void toMainActivity(User user) {
+        Toast.makeText(this,"注册成功",Toast.LENGTH_LONG).show();
         startActivity(new Intent(this, MainActivity.class));
         finish();
     }
