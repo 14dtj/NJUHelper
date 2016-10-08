@@ -16,21 +16,20 @@ public class SignUpPresenterImpl implements SignUpPresenter,SignUpService.OnSign
 
     private SignUpView view;
     private SignUpService service;
-    private Handler handler;
 
     public SignUpPresenterImpl(SignUpView view) {
         this.view = view;
         this.service = new SignUpServiceImpl();
-        this.handler = new Handler();
     }
 
     @Override
-    public void signUp(User user) {
+    public void signUp(final User user) {
         if(view != null)
             view.showLoading();
-
-        service.signUp(user, this);
+        service.signUp(user,this);
     }
+
+
 
     @Override
     public void onDestroy() {
