@@ -15,8 +15,6 @@ public class Post {
     private String content;
     @SerializedName("title")
     private String title;
-    @SerializedName("image")
-    private Byte[] image;
     @SerializedName("state")
     private boolean state;
     @SerializedName("star_num")
@@ -66,14 +64,6 @@ public class Post {
         this.title = title;
     }
 
-    public Byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(Byte[] image) {
-        this.image = image;
-    }
-
     public boolean isState() {
         return state;
     }
@@ -98,11 +88,10 @@ public class Post {
         this.catelog = catelog;
     }
 
-    public Post(String authorName, String content, String title, Byte[] image, boolean state,String catelog) {
+    public Post(String authorName, String content, String title, boolean state,String catelog) {
         this.authorName = authorName;
         this.content = content;
         this.title = title;
-        this.image = image;
         this.state = state;
         this.star_num = 0;
         this.collect_num = 0;

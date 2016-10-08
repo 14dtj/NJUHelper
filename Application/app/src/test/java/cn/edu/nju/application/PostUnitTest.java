@@ -17,7 +17,7 @@ public class PostUnitTest {
     @Test
     public void testAddPost() {
         PostDaoImpl dao = new PostDaoImpl();
-        Post post = new Post("tj", "888", "gl666", null, true, "旅行");
+        Post post = new Post("tj", "traveller", "gl666", true, "travel");
         System.out.println(dao.addPost(post));
     }
 
@@ -30,7 +30,7 @@ public class PostUnitTest {
     @Test
     public void testUpdatePost() {
         PostDaoImpl dao = new PostDaoImpl();
-        Post post = new Post("tj", "666", "gl666", null, true, "旅行");
+        Post post = new Post("tj", "666", "gl666", true, "travel");
         post.setId(2);
         System.out.println(dao.updatePost(post));
     }

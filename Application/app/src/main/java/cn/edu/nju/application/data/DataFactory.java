@@ -9,14 +9,14 @@ public class DataFactory {
     private static IPostDao postDao;
 
     public static IUserDao getUserDao() {
-        if (userDao != null) {
+        if (userDao == null) {
             userDao = new UserDaoImpl();
         }
         return userDao;
     }
 
     public static IPostDao getPostDao() {
-        if (postDao != null) {
+        if (postDao == null) {
             postDao = new PostDaoImpl();
         }
         return postDao;
