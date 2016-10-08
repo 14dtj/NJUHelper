@@ -21,7 +21,7 @@ public class SignUpServiceImpl implements SignUpService {
     @Override
     public void signUp(User user, OnSignUpFinishedListener listener) {
         int result = userDao.signUp(user);
-        if(result == 0) {
+        if(result > 0) {
             listener.onSuccess(user);
         } else {
             listener.onFail();

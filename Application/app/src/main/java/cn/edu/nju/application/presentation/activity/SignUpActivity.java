@@ -75,14 +75,14 @@ public class SignUpActivity extends Activity implements SignUpView,View.OnClickL
 
     @Override
     public void showErrorMessage() {
-        Toast.makeText(this,"该用户名已存在!",Toast.LENGTH_SHORT);
+        Toast.makeText(this,"该用户名已存在!",Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void toMainActivity(User user) {
         Toast.makeText(this,"注册成功",Toast.LENGTH_LONG).show();
-        startActivity(new Intent(this, MainActivity.class));
-        finish();
+//        startActivity(new Intent(this, MainActivity.class));
+//        finish();
     }
 
     @Override
