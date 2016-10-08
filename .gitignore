@@ -3,6 +3,7 @@
 /Application/local.properties
 /Application/.idea/workspace.xml
 /Application/.idea/libraries
+/Application/.idea/
 .DS_Store
 /Application/build
 /Application/captures
