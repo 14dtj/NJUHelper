@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<cn.edu.nju.application.presentation.view.component.HeadPanel xmlns:android="http://schemas.android.com/apk/res/android"
+<cn.edu.nju.application.presentation.util.HeadPanel xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="50dp"
     android:layout_alignParentTop="true">
@@ -16,4 +16,4 @@
         android:layout_alignParentRight="true"
         android:textColor="@android:color/white"/>
 
-</cn.edu.nju.application.presentation.view.component.HeadPanel>
+</cn.edu.nju.application.presentation.util.HeadPanel>

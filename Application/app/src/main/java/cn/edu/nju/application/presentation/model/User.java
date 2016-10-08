@@ -85,4 +85,13 @@ public class User{
         this.credit = 0;
         this.email = email;
     }
+
+    public User(String username, String password, String gender, String email) {
+        this.username = username;
+        this.password = password;
+        this.gender = gender;
+        this.email = email;
+        this.address = "";
+        this.credit = 0;
+    }
 }
