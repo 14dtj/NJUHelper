@@ -9,8 +9,8 @@ import com.google.gson.annotations.SerializedName;
 public class UserCollect {
     @SerializedName("username")
     private String username;
-    @SerializedName("title")
-    private String title;
+    @SerializedName("post_Id")
+    private int post_Id;
 
     public String getUsername() {
         return username;
@@ -20,16 +20,16 @@ public class UserCollect {
         this.username = username;
     }
 
-    public String getTitle() {
-        return title;
+    public int getPost_Id() {
+        return post_Id;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setPost_Id(int post_Id) {
+        this.post_Id = post_Id;
     }
 
-    public UserCollect(String username, String title) {
+    public UserCollect(String username, int post_Id) {
         this.username = username;
-        this.title = title;
+        this.post_Id = post_Id;
     }
 }

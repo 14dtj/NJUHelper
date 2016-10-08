@@ -18,7 +18,7 @@ public class UserUnitTest {
     @Test
     public void testSignUp() {
         UserDaoImpl dao = new UserDaoImpl();
-        User user = new User("daye", "123456", "female", "Nanjing", "daye@qq.com");
+        User user = new User("gl", "123456", "female", "Nanjing", "gl@qq.com");
         System.out.println(dao.signUp(user));
     }
 
@@ -38,7 +38,7 @@ public class UserUnitTest {
     @Test
     public void testCollect() {
         UserDaoImpl dao = new UserDaoImpl();
-        System.out.println(dao.showCollections("tj").get(0).getTitle());
+        System.out.println(dao.showCollections("tj").get(0).getPost_Id());
     }
 
     @Test

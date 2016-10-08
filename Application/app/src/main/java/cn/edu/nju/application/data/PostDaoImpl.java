@@ -18,9 +18,11 @@ import retrofit2.Response;
  */
 public class PostDaoImpl implements IPostDao {
     private RetrofitPostInterface service;
-    public PostDaoImpl(){
+
+    public PostDaoImpl() {
         service = RetrofitServiceFactory.getPostService();
     }
+
     @Override
     public int addPost(Post post) {
         Call<InsertResponse> value = service.addPost(post);
@@ -49,36 +51,92 @@ public class PostDaoImpl implements IPostDao {
 
     @Override
     public int updatePost(Post post) {
-        return 0;
+        Call<InsertResponse> value = service.updatePost(post);
+        int result = 0;
+        try {
+            Response<InsertResponse> response = value.execute();
+            result = response.body().isSuccess();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     @Override
-    public Post showPost(String id) {
-        return null;
+    public Post showPost(int id) {
+        Call<Post> value = service.showPost(id);
+        Post result = null;
+        try {
+            Response<Post> response = value.execute();
+            result = response.body();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     @Override
     public List<Post> showPostList(String catelog) {
-        return null;
+        Call<List<Post>> value = service.showPostByCategory(catelog);
+        List<Post> result = null;
+        try {
+            Response<List<Post>> response = value.execute();
+            result = response.body();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     @Override
-    public List<Comment> showComments(String id) {
-        return null;
+    public List<Comment> showComments(int id) {
+        Call<List<Comment>> value = service.showComment(id);
+        List<Comment> result = null;
+        try {
+            Response<List<Comment>> response = value.execute();
+            result = response.body();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     @Override
     public int addComment(Comment comment) {
-        return 0;
+        Call<InsertResponse> value = service.addComment(comment);
+        int result = 0;
+        try {
+            Response<InsertResponse> response = value.execute();
+            result = response.body().isSuccess();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     @Override
     public int collectPost(UserCollect collect) {
-        return 0;
+        Call<InsertResponse> value = service.collectPost(collect);
+        int result = 0;
+        try {
+            Response<InsertResponse> response = value.execute();
+            result = response.body().isSuccess();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     @Override
     public int starPost(UserStar star) {
-        return 0;
+        Call<InsertResponse> value = service.starPost(star);
+        int result = 0;
+        try {
+            Response<InsertResponse> response = value.execute();
+            result = response.body().isSuccess();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 }

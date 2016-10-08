@@ -38,7 +38,7 @@ public interface IPostDao {
      * @param id
      * @return
      */
-    Post showPost(String id);
+    Post showPost(int id);
 
     /**
      * 根据类别显示帖子
@@ -52,7 +52,7 @@ public interface IPostDao {
      * @param id
      * @return
      */
-    List<Comment> showComments(String id);
+    List<Comment> showComments(int id);
 
     /**
      * 发表评论
