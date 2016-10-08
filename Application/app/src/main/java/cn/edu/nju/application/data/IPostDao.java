@@ -74,4 +74,10 @@ public interface IPostDao {
      * @return
      */
     int starPost(UserStar star);
+
+    /**
+     * 展示所有的帖子
+     * @return
+     */
+    List<Post> showAllPosts();
 }

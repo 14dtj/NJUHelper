@@ -1,7 +1,5 @@
 package cn.edu.nju.application.presentation.presenter;
 
-import android.widget.ListView;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,8 +23,7 @@ public class HomeFragmentPresenter {
     }
 
     public void loadPosts() {
-        List<Post> list = dao.showPostList("旅行");
-
+        List<Post> list = dao.showAllPosts();
         ArrayList<HashMap<String, String>> data = null;
         for (Post post : list) {
             HashMap<String, String> map = new HashMap<>();

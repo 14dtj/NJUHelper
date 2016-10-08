@@ -74,4 +74,10 @@ public class PostUnitTest {
         UserStar collect = new UserStar("gl", 2);
         System.out.println(dao.starPost(collect));
     }
+
+    @Test
+    public void testUploadImage() {
+        PostDaoImpl dao = new PostDaoImpl();
+        System.out.println(dao.uploadImage(2));
+    }
 }
