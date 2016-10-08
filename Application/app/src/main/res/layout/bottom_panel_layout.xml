@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<cn.edu.nju.application.presentation.view.component.BottomPanel xmlns:android="http://schemas.android.com/apk/res/android"
+<cn.edu.nju.application.presentation.util.BottomPanel xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="60dp"
     android:layout_alignParentBottom="true"
@@ -7,32 +7,32 @@
     android:paddingLeft="20dp"
     android:paddingRight="20dp">
 
-    <cn.edu.nju.application.presentation.view.element.ImageText
+    <cn.edu.nju.application.presentation.util.ImageText
         android:id="@+id/btn_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         />
 
-    <cn.edu.nju.application.presentation.view.element.ImageText
+    <cn.edu.nju.application.presentation.util.ImageText
         android:id="@+id/btn_topic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/btn_home"
         />
 
-    <cn.edu.nju.application.presentation.view.element.ImageText
+    <cn.edu.nju.application.presentation.util.ImageText
         android:id="@+id/btn_store"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/btn_topic"
         />
 
-    <cn.edu.nju.application.presentation.view.element.ImageText
+    <cn.edu.nju.application.presentation.util.ImageText
         android:id="@+id/btn_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         />
 
-</cn.edu.nju.application.presentation.view.component.BottomPanel>
+</cn.edu.nju.application.presentation.util.BottomPanel>
