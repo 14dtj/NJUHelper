@@ -25,7 +25,6 @@ import cn.edu.nju.application.presentation.view.SignUpView;
 public class SignUpActivity extends Activity implements SignUpView,View.OnClickListener{
 
     private Button button;
-    private ProgressBar progress;
     private EditText username,password,email;
     private RadioGroup rg;
 
@@ -39,7 +38,6 @@ public class SignUpActivity extends Activity implements SignUpView,View.OnClickL
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        progress = (ProgressBar)findViewById(R.id.progressBar);
         username = (EditText)findViewById(R.id.username);
         password = (EditText)findViewById(R.id.password);
         email = (EditText)findViewById(R.id.email);

@@ -30,7 +30,6 @@ public class LoginActivity extends Activity implements LoginView, View.OnClickLi
 
     private Button button,tosign;
     private EditText username,password;
-    private ProgressBar progress;
 
     public LoginPresenter presenter;
 
@@ -41,7 +40,6 @@ public class LoginActivity extends Activity implements LoginView, View.OnClickLi
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        progress = (ProgressBar)findViewById(R.id.progress);
         username = (EditText)findViewById(R.id.login_username);
         password = (EditText)findViewById(R.id.login_password);
         button = (Button) findViewById(R.id.btn_login);

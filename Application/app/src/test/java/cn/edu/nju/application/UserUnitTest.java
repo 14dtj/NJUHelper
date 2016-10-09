@@ -32,7 +32,13 @@ public class UserUnitTest {
     @Test
     public void testFollowers() {
         UserDaoImpl dao = new UserDaoImpl();
-        System.out.println(dao.showFollowers("tj").size());
+        System.out.println(dao.showFollowers("gl").size());
+    }
+
+    @Test
+    public void testStar() {
+        UserDaoImpl dao = new UserDaoImpl();
+        System.out.println(dao.showstars("gl"));
     }
 
     @Test
