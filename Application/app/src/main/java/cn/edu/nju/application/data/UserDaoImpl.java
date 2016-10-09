@@ -10,6 +10,7 @@ import cn.edu.nju.application.presentation.model.Post;
 import cn.edu.nju.application.presentation.model.User;
 import cn.edu.nju.application.presentation.model.UserCollect;
 import cn.edu.nju.application.presentation.model.UserFollower;
+import cn.edu.nju.application.presentation.model.UserStar;
 import retrofit2.Call;
 import retrofit2.Response;
 

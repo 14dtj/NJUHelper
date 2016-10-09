@@ -4,10 +4,13 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 
 import cn.edu.nju.application.R;
+import cn.edu.nju.application.presentation.fragment.UserFragment;
+import cn.edu.nju.application.presentation.model.User;
 import cn.edu.nju.application.presentation.util.HeadPanel;
 import cn.edu.nju.application.presentation.util.Constant;
 import cn.edu.nju.application.presentation.util.BottomPanel;
@@ -15,12 +18,14 @@ import cn.edu.nju.application.presentation.fragment.BaseFragment;
 
 public class MainActivity extends Activity implements BottomPanel.BottomPanelCall{
 
+
     private BottomPanel bottomPanel = null;
     private HeadPanel headPanel = null;
     private FragmentManager fragmentManager = null;
     private FragmentTransaction fragmentTransaction = null;
 
     public static String currentFrag = "";
+    private static User loginUser = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +33,7 @@ public class MainActivity extends Activity implements BottomPanel.BottomPanelCal
         setContentView(R.layout.activity_main);
         initUI();
         fragmentManager = getFragmentManager();
-        setDefaultFirstFragment(Constant.FRAGMENT_HOME);
+        setDefaultFirstFragment(Constant.FRAGMENT_STORE);
     }
 
     private void initUI(){
@@ -55,7 +60,13 @@ public class MainActivity extends Activity implements BottomPanel.BottomPanelCal
         }else if((itemID & Constant.BTN_STORE) != 0){
             tag = Constant.FRAGMENT_STORE;
         }else if((itemID & Constant.BTN_USER) != 0){
-            tag = Constant.FRAGMENT_USER;
+            if(getLoginUser() == null) {
+                startActivity(new Intent(this,LoginActivity.class));
+                finish();
+            } else {
+                tag = Constant.FRAGMENT_USER;
+            }
+
         }
         setTabSelection(tag); //切换Fragment
         headPanel.setMiddleTitle(tag);
@@ -73,7 +84,7 @@ public class MainActivity extends Activity implements BottomPanel.BottomPanelCal
             detachFragment(getFragment(currentFrag));
         }
         attachFragment(R.id.fragment_content, getFragment(tag), tag);
-        commitTransactions( tag);
+        commitTransactions(tag);
     }
 
     /**设置选中的Tag
@@ -149,7 +160,20 @@ public class MainActivity extends Activity implements BottomPanel.BottomPanelCal
     }
 
     @Override
+    protected void onDestroy() {
+        // TODO Auto-generated method stub
+        super.onDestroy();
+    }
+
+    @Override
     protected void onSaveInstanceState(Bundle outState) {
         // TODO Auto-generated method stub
+    }
+
+    public static void setLoginUser(User user) {
+        loginUser = user;
+    }
+    public static User getLoginUser() {
+        return loginUser;
     }
 }

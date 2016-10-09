@@ -1,26 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:background="@mipmap/test"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
 
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:hint="@string/username"
-        android:drawableLeft="@mipmap/ic_action_person"
-        android:drawablePadding="8dp"
-        />
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:drawableLeft="@mipmap/ic_action_accounts"
-        android:drawablePadding="8dp"
-        />
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="130dp">
+
+        <EditText
+            android:id="@+id/login_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:hint="@string/username"
+            android:drawableLeft="@mipmap/ic_action_person"
+            android:drawablePadding="8dp"
+            />
+
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:drawableLeft="@mipmap/ic_action_accounts"
+            android:drawablePadding="8dp"
+            />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="登录"
+            />
+
+        <Button
+            android:id="@+id/btn_tosignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="没有账号?"
+            />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/progress" />
+
+    </LinearLayout>
+
 
 </LinearLayout>

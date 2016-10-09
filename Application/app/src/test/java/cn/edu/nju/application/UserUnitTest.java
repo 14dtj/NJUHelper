@@ -32,7 +32,7 @@ public class UserUnitTest {
     @Test
     public void testFollowers() {
         UserDaoImpl dao = new UserDaoImpl();
-        System.out.println(dao.showFollowers("tj").get(0).getFollowerName());
+        System.out.println(dao.showFollowers("tj").size());
     }
 
     @Test

@@ -6,6 +6,7 @@ import cn.edu.nju.application.presentation.model.Post;
 import cn.edu.nju.application.presentation.model.User;
 import cn.edu.nju.application.presentation.model.UserCollect;
 import cn.edu.nju.application.presentation.model.UserFollower;
+import cn.edu.nju.application.presentation.model.UserStar;
 
 /**
  * Created by phoebegl on 16/9/21.
@@ -40,6 +41,13 @@ public interface IUserDao {
      * @return
      */
     List<UserFollower> showFollowers(String username);
+
+    /**
+     * 显示用户点赞情况
+     * @param username
+     * @return
+     */
+    List<UserStar> showstars(String username);
 
     /**
      * 显示用户收藏帖子情况
