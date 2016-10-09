@@ -19,7 +19,6 @@
 
         <activity android:name=".presentation.activity.SignUpActivity"
             android:label="Application">
-
         </activity>
         <activity android:name=".presentation.activity.LoginActivity"
             android:label="Application">

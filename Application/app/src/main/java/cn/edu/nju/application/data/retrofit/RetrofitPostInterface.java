@@ -8,6 +8,7 @@ import cn.edu.nju.application.presentation.model.Post;
 import cn.edu.nju.application.presentation.model.UserCollect;
 import cn.edu.nju.application.presentation.model.UserStar;
 import okhttp3.MultipartBody;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -39,6 +40,7 @@ public interface RetrofitPostInterface {
 
     /**
      * 编辑帖子
+     *
      * @param post
      * @return
      */
@@ -48,6 +50,7 @@ public interface RetrofitPostInterface {
 
     /**
      * 展示帖子具体内容
+     *
      * @param id
      * @return
      */
@@ -56,6 +59,7 @@ public interface RetrofitPostInterface {
 
     /**
      * 根据类别展示帖子列表
+     *
      * @param category
      * @return
      */
@@ -64,6 +68,7 @@ public interface RetrofitPostInterface {
 
     /**
      * 展示帖子评论
+     *
      * @param id
      * @return
      */
@@ -72,6 +77,7 @@ public interface RetrofitPostInterface {
 
     /**
      * 添加评论
+     *
      * @param comment
      * @return
      */
@@ -81,6 +87,7 @@ public interface RetrofitPostInterface {
 
     /**
      * 收藏帖子
+     *
      * @param data
      * @return
      */
@@ -90,6 +97,7 @@ public interface RetrofitPostInterface {
 
     /**
      * 点赞帖子
+     *
      * @param data
      * @return
      */
@@ -99,11 +107,22 @@ public interface RetrofitPostInterface {
 
     /**
      * 展示所有的帖子
+     *
      * @return
      */
     @GET("showAllPosts")
     Call<List<Post>> showAllPosts();
 
+    /**
+     * 获得图片
+     *
+     * @param id
+     * @return
+     */
+    @GET("getPostImage/{id}")
+    Call<ResponseBody> getPostImage(@Path("id") int id);
+
+    //TODO
     @Multipart
     @POST("upload.php")
     Call<InsertResponse> uploadImage(@Part("id") int id,
