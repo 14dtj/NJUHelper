@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:weightSum="1">
     <ImageView
-        android:id="@+id/imageview"
+        android:id="@+id/post_img"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <EditText

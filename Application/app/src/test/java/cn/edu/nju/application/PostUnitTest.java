@@ -80,4 +80,10 @@ public class PostUnitTest {
         PostDaoImpl dao = new PostDaoImpl();
         System.out.println(dao.uploadImage(2));
     }
+
+    @Test
+    public void testGetImage() {
+        PostDaoImpl dao = new PostDaoImpl();
+        dao.getPostImage(2);
+    }
 }

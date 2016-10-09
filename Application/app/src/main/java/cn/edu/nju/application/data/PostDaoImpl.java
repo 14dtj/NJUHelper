@@ -1,5 +1,7 @@
 package cn.edu.nju.application.data;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 
 import java.io.File;
@@ -19,6 +21,7 @@ import cn.edu.nju.application.presentation.model.UserStar;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -162,6 +165,20 @@ public class PostDaoImpl implements IPostDao {
             e.printStackTrace();
         }
         return result;
+    }
+
+    @Override
+    public Bitmap getPostImage(int id) {
+        Bitmap mBitmap = null;
+        Call<ResponseBody> call = service.getPostImage(id);
+        try {
+            ResponseBody body = call.execute().body();
+            InputStream stream = body.byteStream();
+            mBitmap = BitmapFactory.decodeStream(stream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return mBitmap;
     }
 
     public int uploadImage(int id) {

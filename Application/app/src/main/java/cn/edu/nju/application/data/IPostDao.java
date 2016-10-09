@@ -1,5 +1,7 @@
 package cn.edu.nju.application.data;
 
+import android.graphics.Bitmap;
+
 import java.util.List;
 
 import cn.edu.nju.application.presentation.model.Comment;
@@ -80,4 +82,11 @@ public interface IPostDao {
      * @return
      */
     List<Post> showAllPosts();
+
+    /**
+     * 获得图片
+     * @param id
+     * @return
+     */
+    Bitmap getPostImage(int id);
 }
