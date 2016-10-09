@@ -1,6 +1,7 @@
 package cn.edu.nju.application.presentation.fragment;
 
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +32,7 @@ public class HomeFragment extends BaseFragment {
                 container, false);
         presenter = new HomeFragmentPresenter(this);
         postList = (ListView) view.findViewById(R.id.list);
-        presenter.loadPosts();
+        presenter.execute();
         return view;
     }
 

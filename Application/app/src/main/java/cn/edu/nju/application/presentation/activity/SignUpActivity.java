@@ -81,8 +81,8 @@ public class SignUpActivity extends Activity implements SignUpView,View.OnClickL
     @Override
     public void toMainActivity(User user) {
         Toast.makeText(this,"注册成功",Toast.LENGTH_LONG).show();
-//        startActivity(new Intent(this, MainActivity.class));
-//        finish();
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 
     @Override
