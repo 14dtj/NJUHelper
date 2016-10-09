@@ -24,8 +24,6 @@ public class SignUpPresenterImpl implements SignUpPresenter,SignUpService.OnSign
 
     @Override
     public void signUp(final User user) {
-        if(view != null)
-            view.showLoading();
         service.signUp(user,this);
     }
 
@@ -40,7 +38,6 @@ public class SignUpPresenterImpl implements SignUpPresenter,SignUpService.OnSign
     public void onFail() {
         if(view != null) {
             view.showErrorMessage();
-            view.hideLoading();
         }
     }
 

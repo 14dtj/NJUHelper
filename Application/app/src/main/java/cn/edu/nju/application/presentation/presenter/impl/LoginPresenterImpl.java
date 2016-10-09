@@ -22,9 +22,6 @@ public class LoginPresenterImpl implements LoginPresenter,LoginService.OnLoginLi
 
     @Override
     public void login(String username, String password) {
-        if(view != null) {
-            view.showLoading();
-        }
         service.login(username,password,this);
     }
 
@@ -37,7 +34,6 @@ public class LoginPresenterImpl implements LoginPresenter,LoginService.OnLoginLi
     public void onError() {
         if(view != null) {
             view.showErrorMessage();
-            view.hideLoading();
         }
     }
 

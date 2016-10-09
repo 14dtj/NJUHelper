@@ -64,16 +64,6 @@ public class SignUpActivity extends Activity implements SignUpView,View.OnClickL
     }
 
     @Override
-    public void showLoading() {
-        progress.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void hideLoading() {
-        progress.setVisibility(View.GONE);
-    }
-
-    @Override
     public void showErrorMessage() {
         Toast.makeText(this,"该用户名已存在!",Toast.LENGTH_SHORT).show();
     }

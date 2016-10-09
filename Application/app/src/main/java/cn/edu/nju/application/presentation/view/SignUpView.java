@@ -8,10 +8,6 @@ import cn.edu.nju.application.presentation.model.User;
 
 public interface SignUpView {
 
-    void showLoading();
-
-    void hideLoading();
-
     void showErrorMessage();
 
     void toMainActivity(User user);
