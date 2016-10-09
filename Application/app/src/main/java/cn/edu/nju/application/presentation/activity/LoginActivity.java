@@ -64,16 +64,6 @@ public class LoginActivity extends Activity implements LoginView, View.OnClickLi
     }
 
     @Override
-    public void showLoading() {
-        progress.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void hideLoading() {
-        progress.setVisibility(View.GONE);
-    }
-
-    @Override
     public void showErrorMessage() {
         Toast.makeText(this,"用户名或密码错误",Toast.LENGTH_SHORT).show();
     }
