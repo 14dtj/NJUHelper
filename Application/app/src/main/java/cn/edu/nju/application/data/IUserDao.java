@@ -43,11 +43,11 @@ public interface IUserDao {
     List<UserFollower> showFollowers(String username);
 
     /**
-     * 显示用户点赞情况
+     * 显示用户收获点赞数目
      * @param username
      * @return
      */
-    List<UserStar> showstars(String username);
+     int showstars(String username);
 
     /**
      * 显示用户收藏帖子情况

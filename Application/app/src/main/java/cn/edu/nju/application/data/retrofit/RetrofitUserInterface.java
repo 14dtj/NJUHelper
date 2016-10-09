@@ -7,6 +7,7 @@ import cn.edu.nju.application.presentation.model.Post;
 import cn.edu.nju.application.presentation.model.User;
 import cn.edu.nju.application.presentation.model.UserCollect;
 import cn.edu.nju.application.presentation.model.UserFollower;
+import cn.edu.nju.application.presentation.model.UserStar;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.FormUrlEncoded;
@@ -69,4 +70,12 @@ public interface RetrofitUserInterface {
      */
     @GET("history/{username}")
     Call<List<Post>> getPosts(@Path("username") String username);
+
+    /**
+     * 得到用户收获的赞数
+     * @param username
+     * @return
+     */
+    @GET("stars/{username}")
+    Call<InsertResponse> getStars(@Path("username") String username);
 }

@@ -37,13 +37,14 @@ public class HomeFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         view = inflater.inflate(R.layout.homefrag_layout,
                 container, false);
         presenter = new HomeFragmentPresenter(this);
         postList = (ListView) view.findViewById(R.id.list);
         switcher = (ImageSwitcher) view.findViewById(R.id.theme_switcher);
-
-        presenter.execute();
+        presenter.loadPosts();
 
         return view;
     }
@@ -56,8 +57,8 @@ public class HomeFragment extends BaseFragment {
     }
 
     public void setPostAdapter(ArrayList<HashMap<String, Object>> list) {
-        String[] from = {"title", "content"};
-        int[] to = {R.id.title_text, R.id.content_text};
+        String[] from = {"title", "content", "image"};
+        int[] to = {R.id.title_text, R.id.content_text, R.id.post_img};
         SimpleAdapter adapter = new SimpleAdapter(view.getContext(), list, R.layout.simplepost_layout, from, to);
         postList.setAdapter(adapter);
     }

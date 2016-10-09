@@ -77,6 +77,18 @@ public class UserDaoImpl implements IUserDao {
     }
 
     @Override
+    public int showstars(String username) {
+        Call<InsertResponse> call = service.getStars(username);
+        int count = 0;
+        try {
+            count = call.execute().body().isSuccess();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+
+    @Override
     public List<UserCollect> showCollections(String username) {
         Call<List<UserCollect>> value = service.getCollections(username);
         List<UserCollect> result = null;

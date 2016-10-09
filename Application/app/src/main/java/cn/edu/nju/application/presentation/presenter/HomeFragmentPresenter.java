@@ -17,7 +17,7 @@ import cn.edu.nju.application.presentation.model.Post;
  * Created by tjDu on 2016/10/8.
  */
 
-public class HomeFragmentPresenter extends AsyncTask {
+public class HomeFragmentPresenter {
     private IPostDao dao;
     private HomeFragment view;
 
@@ -33,16 +33,11 @@ public class HomeFragmentPresenter extends AsyncTask {
             HashMap<String, Object> map = new HashMap<>();
             map.put("title", post.getTitle());
             map.put("content", post.getContent());
+            map.put("image", dao.getPostImage(post.getId()));
             data.add(map);
         }
 
         view.setPostAdapter(data);
-    }
-
-    @Override
-    protected Object doInBackground(Object[] params) {
-        loadPosts();
-        return null;
     }
 
 
