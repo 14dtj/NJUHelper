@@ -61,18 +61,28 @@ public class UserFragment extends BaseFragment{
                 tx.commit();
             }
         });
-//        posts.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                presenter.showPosts();
-//            }
-//        });
-//        collections.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                presenter.showCollections();
-//            }
-//        });
+        posts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PostFragment frag = new PostFragment();
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction tx = fm.beginTransaction();
+                tx.replace(R.id.root_layout, frag, "THREE");
+                tx.addToBackStack(null);
+                tx.commit();
+            }
+        });
+        collections.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CollectionFragment frag = new CollectionFragment();
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction tx = fm.beginTransaction();
+                tx.replace(R.id.root_layout, frag, "FOUR");
+                tx.addToBackStack(null);
+                tx.commit();
+            }
+        });
 
         return view;
     }
