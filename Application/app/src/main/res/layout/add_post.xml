@@ -1,81 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:weightSum="1">
 
     <EditText
+        android:id="@+id/title_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="标题"
         android:ems="10"
-        android:id="@+id/title_text" />
+        android:inputType="textPersonName"
+        android:text="标题" />
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="38dp"
+        android:orientation="horizontal"
         android:weightSum="1">
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="47dp"
             android:layout_height="37dp"
-            app:srcCompat="@drawable/picture"
-            android:id="@+id/imageView" />
+            android:src="@mipmap/picture"
+            app:srcCompat="@drawable/picture" />
 
         <TextView
-            android:text="图片"
             android:layout_width="wrap_content"
             android:layout_height="37dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:text="图片" />
 
         <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="49dp"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/file"
-            android:id="@+id/imageView2" />
+            android:src="@mipmap/file"
+            app:srcCompat="@drawable/file" />
 
         <TextView
-            android:text="附件"
             android:layout_width="wrap_content"
             android:layout_height="37dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:text="附件" />
 
         <Spinner
+            android:id="@+id/spinner2"
             android:layout_width="wrap_content"
             android:layout_height="37dp"
-            android:id="@+id/spinner2"
-            android:entries="@array/spingarr"
-            />
+            android:entries="@array/spingarr" />
 
     </LinearLayout>
 
     <EditText
+        android:id="@+id/content_text"
         android:layout_width="match_parent"
         android:layout_height="397dp"
-        android:inputType="textPersonName"
-        android:text="content"
         android:ems="10"
-        android:id="@+id/content_text" />
+        android:inputType="textPersonName"
+        android:text="content" />
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
         <Button
-            android:text="发布"
+            android:id="@+id/publish_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/publish_button" />
+            android:text="发布" />
 
         <Button
-            android:text="草稿"
+            android:id="@+id/save_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/save_button" />
+            android:text="草稿" />
     </LinearLayout>
 
 
