@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import cn.edu.nju.application.R;
@@ -26,8 +27,8 @@ public class MainActivity extends Activity implements BottomPanel.BottomPanelCal
     private HeadPanel headPanel = null;
     private FragmentManager fragmentManager = null;
     private FragmentTransaction fragmentTransaction = null;
-    private Button searchButton;
-    private Button addPostButton;
+    private ImageButton searchButton;
+    private ImageButton addPostButton;
     public static String currentFrag = "";
     private static User loginUser = null;
 
@@ -41,8 +42,8 @@ public class MainActivity extends Activity implements BottomPanel.BottomPanelCal
     }
 
     private void initUI() {
-        searchButton = (Button) findViewById(R.id.searchButton);
-        addPostButton = (Button) findViewById(R.id.addPostButton);
+        searchButton = (ImageButton) findViewById(R.id.searchButton);
+        addPostButton = (ImageButton) findViewById(R.id.addPostButton);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

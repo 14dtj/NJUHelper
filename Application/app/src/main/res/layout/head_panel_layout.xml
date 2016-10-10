@@ -34,19 +34,24 @@
             android:ems="10"
             android:id="@+id/editText" />
 
-        <Button
-            android:text="搜索"
-            android:layout_width="45dp"
-            android:layout_height="match_parent"
+        <ImageButton
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="85dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/searchButton"
-            android:layout_weight="0.50" />
-
-        <Button
-            android:text="发表"
+            android:src="@mipmap/search"
+            android:background="#00000000"
+            />
+        <ImageButton
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/addPostButton"
-            android:layout_weight="0.39" />
+            android:src="@mipmap/add"
+            android:background="#00000000"
+            />
 
     </LinearLayout>
 
