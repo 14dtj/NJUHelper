@@ -57,7 +57,6 @@ public class HomeFragment extends BaseFragment implements ViewSwitcher.ViewFacto
                 Intent intent = new Intent(view.getContext(), SinglePostActivity.class);
                 intent.putExtra("id", position);
                 startActivity(intent);
-                myFinish();
             }
         });
         switcher = (ImageSwitcher) view.findViewById(R.id.theme_switcher);

@@ -20,5 +20,6 @@ public class Constant {
     public static final String FRAGMENT_STORE = "商城";
     public static final String FRAGMENT_USER = "个人";
 
-    public static final int[] postImages = {R.drawable.post_img1, R.drawable.post_img2,R.drawable.post_img3};
+    public static final int[] postImages = {R.drawable.post_img1, R.drawable.post_img2, R.drawable.post_img3, R.drawable.post_img3,
+            R.drawable.post_img3, R.drawable.post_img3, R.drawable.post_img3, R.drawable.post_img3, R.drawable.post_img3, R.drawable.post_img3};
 }

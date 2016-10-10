@@ -10,6 +10,7 @@ import android.widget.Toast;
 import cn.edu.nju.application.R;
 import cn.edu.nju.application.data.DataFactory;
 import cn.edu.nju.application.data.IPostDao;
+import cn.edu.nju.application.presentation.model.Post;
 import cn.edu.nju.application.presentation.util.Constant;
 
 /**
@@ -21,6 +22,8 @@ public class SinglePostActivity extends Activity {
     private IPostDao dao;
     private TextView textView;
     private ImageView imageView;
+    private TextView authorText;
+    private TextView starText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +32,14 @@ public class SinglePostActivity extends Activity {
         Bundle bundle = getIntent().getExtras();
         postId = Integer.parseInt(bundle.get("id") + "");
         textView = (TextView) findViewById(R.id.single_post_text);
+        authorText = (TextView) findViewById(R.id.author_text);
+        starText = (TextView) findViewById(R.id.star_num_text);
         imageView = (ImageView) findViewById(R.id.single_post_img);
         dao = DataFactory.getPostDao();
-        textView.setText(dao.showPost(postId + 1).getContent());
+        Post post = dao.showPost(postId + 1);
+        textView.setText(post.getContent());
+        starText.setText("赞："+post.getStar_num());
+        authorText.setText(post.getAuthorName()+"分享");
         imageView.setImageResource(Constant.postImages[postId]);
     }
 

@@ -57,7 +57,6 @@ public class MainActivity extends Activity implements BottomPanel.BottomPanelCal
                     makeToast("请先登录");
                 } else {
                     startActivity(new Intent(MainActivity.this, AddPostActivity.class));
-                    finish();
                 }
             }
         });
