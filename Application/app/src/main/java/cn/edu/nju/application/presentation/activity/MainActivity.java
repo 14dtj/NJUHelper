@@ -7,6 +7,9 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import cn.edu.nju.application.R;
 import cn.edu.nju.application.presentation.fragment.UserFragment;
@@ -23,9 +26,10 @@ public class MainActivity extends Activity implements BottomPanel.BottomPanelCal
     private HeadPanel headPanel = null;
     private FragmentManager fragmentManager = null;
     private FragmentTransaction fragmentTransaction = null;
+    private Button searchButton;
+    private Button addPostButton;
     public static String currentFrag = "";
     private static User loginUser = null;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,25 @@ public class MainActivity extends Activity implements BottomPanel.BottomPanelCal
     }
 
     private void initUI() {
+        searchButton = (Button) findViewById(R.id.searchButton);
+        addPostButton = (Button) findViewById(R.id.addPostButton);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchFragment(Constant.FRAGMENT_STORE);
+            }
+        });
+        addPostButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (MainActivity.getLoginUser() == null) {
+                    makeToast("请先登录");
+                } else {
+                    startActivity(new Intent(MainActivity.this, AddPostActivity.class));
+                    finish();
+                }
+            }
+        });
         bottomPanel = (BottomPanel) findViewById(R.id.bottom_layout);
         if (bottomPanel != null) {
             bottomPanel.init();
@@ -59,9 +82,9 @@ public class MainActivity extends Activity implements BottomPanel.BottomPanelCal
             tag = Constant.FRAGMENT_TOPIC;
         } else if ((itemID & Constant.BTN_STORE) != 0) {
             tag = Constant.FRAGMENT_STORE;
-        }else if((itemID & Constant.BTN_USER) != 0){
-            if(getLoginUser() == null) {
-                startActivity(new Intent(this,LoginActivity.class));
+        } else if ((itemID & Constant.BTN_USER) != 0) {
+            if (getLoginUser() == null) {
+                startActivity(new Intent(this, LoginActivity.class));
                 finish();
             } else {
                 tag = Constant.FRAGMENT_USER;
@@ -176,7 +199,12 @@ public class MainActivity extends Activity implements BottomPanel.BottomPanelCal
     public static void setLoginUser(User user) {
         loginUser = user;
     }
+
     public static User getLoginUser() {
         return loginUser;
+    }
+
+    public void makeToast(String content) {
+        Toast.makeText(this, content, Toast.LENGTH_SHORT).show();
     }
 }

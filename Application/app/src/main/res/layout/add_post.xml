@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="标题"
+        android:ems="10"
+        android:id="@+id/title_text" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="47dp"
+            android:layout_height="37dp"
+            app:srcCompat="@drawable/picture"
+            android:id="@+id/imageView" />
+
+        <TextView
+            android:text="图片"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:layout_width="49dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/file"
+            android:id="@+id/imageView2" />
+
+        <TextView
+            android:text="附件"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_marginTop="10dp"/>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:id="@+id/spinner2"
+            android:entries="@array/spingarr"
+            />
+
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="397dp"
+        android:inputType="textPersonName"
+        android:text="content"
+        android:ems="10"
+        android:id="@+id/content_text" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:text="发布"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/publish_button" />
+
+        <Button
+            android:text="草稿"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/save_button" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <cn.edu.nju.application.presentation.util.HeadPanel xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="50dp"
     android:layout_alignParentTop="true">
@@ -15,5 +16,38 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textColor="@android:color/white"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/right_title"
+        android:layout_alignEnd="@+id/right_title">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:ems="10"
+            android:id="@+id/editText" />
+
+        <Button
+            android:text="搜索"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:id="@+id/searchButton"
+            android:layout_weight="0.50" />
+
+        <Button
+            android:text="发表"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addPostButton"
+            android:layout_weight="0.39" />
+
+    </LinearLayout>
 
 </cn.edu.nju.application.presentation.util.HeadPanel>
