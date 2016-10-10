@@ -8,10 +8,9 @@
         android:id="@+id/post_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:text="Name"
         android:ems="10"
         android:id="@+id/title_text"
@@ -19,10 +18,9 @@
         android:textStyle="bold"
         android:typeface="serif" />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:layout_height="50dp"
         android:text="Name"
         android:ems="10"
         android:id="@+id/content_text"
