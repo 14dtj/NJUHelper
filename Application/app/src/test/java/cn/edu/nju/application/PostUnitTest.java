@@ -38,7 +38,7 @@ public class PostUnitTest {
     @Test
     public void testShowPost() {
         PostDaoImpl dao = new PostDaoImpl();
-        System.out.println(dao.showPost(2).getTitle());
+        System.out.println(dao.showPost(2).getContent());
     }
 
     @Test

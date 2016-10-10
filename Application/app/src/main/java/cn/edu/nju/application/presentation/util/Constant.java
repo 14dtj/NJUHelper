@@ -1,5 +1,7 @@
 package cn.edu.nju.application.presentation.util;
 
+import cn.edu.nju.application.R;
+
 /**
  * Created by phoebegl on 16/9/27.
  */
@@ -18,4 +20,5 @@ public class Constant {
     public static final String FRAGMENT_STORE = "商城";
     public static final String FRAGMENT_USER = "个人";
 
+    public static final int[] postImages = {R.drawable.post_img1, R.drawable.post_img2};
 }

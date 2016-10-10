@@ -9,6 +9,7 @@ import cn.edu.nju.application.data.DataFactory;
 import cn.edu.nju.application.data.IPostDao;
 import cn.edu.nju.application.presentation.fragment.HomeFragment;
 import cn.edu.nju.application.presentation.model.Post;
+import cn.edu.nju.application.presentation.util.Constant;
 
 /**
  * Created by tjDu on 2016/10/8.
@@ -26,14 +27,13 @@ public class HomeFragmentPresenter {
     }
 
     public void loadPosts() {
-        imgIds = new int[]{R.drawable.post_img2, R.drawable.post_img3, R.drawable.post_img4, R.drawable.post_img2};
         List<Post> list = dao.showAllPosts();
         ArrayList<HashMap<String, Object>> data = new ArrayList<>();
         for (Post post : list) {
             HashMap<String, Object> map = new HashMap<>();
             map.put("title", post.getTitle());
             map.put("content", post.getContent());
-            map.put("image", imgIds[0]);
+            map.put("image", Constant.postImages[post.getId() - 1]);
             data.add(map);
         }
 
