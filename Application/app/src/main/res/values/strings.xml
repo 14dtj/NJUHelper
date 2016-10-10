@@ -6,4 +6,10 @@
     <string name="male">男</string>
     <string name="female">女</string>
     <string name="address">address</string>
+    <string-array name="spingarr">
+        <item>旅行</item>
+        <item>数码</item>
+        <item>文具</item>
+        <item>其他</item>
+    </string-array>
 </resources>
