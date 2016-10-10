@@ -33,9 +33,11 @@ public class UserFragmentPresenter{
 
         User temp = MainActivity.getLoginUser();
         int followers = dao.showFollowers(temp.getUsername()).size();
+        int stars = dao.showstars(temp.getUsername());
 
         view.setName(temp.getUsername());
         view.setFollower(String.valueOf(followers));
+        view.setStar(String.valueOf(stars));
         view.setCredit(String.valueOf(temp.getCredit()));
     }
 
