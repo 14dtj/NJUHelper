@@ -9,6 +9,7 @@ import cn.edu.nju.application.data.IPostDao;
 import cn.edu.nju.application.data.IUserDao;
 import cn.edu.nju.application.data.PostDaoImpl;
 import cn.edu.nju.application.data.UserDaoImpl;
+import cn.edu.nju.application.data.response.CollectionResponse;
 import cn.edu.nju.application.presentation.fragment.CollectionFragment;
 import cn.edu.nju.application.presentation.fragment.PostFragment;
 import cn.edu.nju.application.presentation.model.Post;
@@ -32,9 +33,9 @@ public class CollectionPresenter {
     }
 
     public void loadCollection(User user) {
-        List<UserCollect> list = dao.showCollections(user.getUsername());
+        List<CollectionResponse> list = dao.showCollections(user.getUsername());
         ArrayList<HashMap<String, Object>> data = new ArrayList<>();
-        for (UserCollect post : list) {
+        for (CollectionResponse post : list) {
             HashMap<String, Object> map = new HashMap<>();
             Post temp = postDao.showPost(post.getPost_Id());
             map.put("title", temp.getTitle());
