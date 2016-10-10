@@ -44,7 +44,7 @@ public class UserUnitTest {
     @Test
     public void testCollect() {
         UserDaoImpl dao = new UserDaoImpl();
-        System.out.println(dao.showCollections("tj").get(0).getPost_Id());
+        System.out.println(dao.showCollections("tj").get(1).getPost_Id());
     }
 
     @Test

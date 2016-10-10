@@ -2,6 +2,7 @@ package cn.edu.nju.application.data;
 
 import java.util.List;
 
+import cn.edu.nju.application.data.response.CollectionResponse;
 import cn.edu.nju.application.presentation.model.Post;
 import cn.edu.nju.application.presentation.model.User;
 import cn.edu.nju.application.presentation.model.UserCollect;
@@ -54,7 +55,7 @@ public interface IUserDao {
      * @param username
      * @return
      */
-    List<UserCollect> showCollections(String username);
+    List<CollectionResponse> showCollections(String username);
 
     /**
      * 显示自己所有帖子

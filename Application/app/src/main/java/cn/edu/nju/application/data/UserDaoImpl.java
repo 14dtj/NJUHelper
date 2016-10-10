@@ -3,6 +3,7 @@ package cn.edu.nju.application.data;
 import java.io.IOException;
 import java.util.List;
 
+import cn.edu.nju.application.data.response.CollectionResponse;
 import cn.edu.nju.application.data.response.InsertResponse;
 import cn.edu.nju.application.data.retrofit.RetrofitServiceFactory;
 import cn.edu.nju.application.data.retrofit.RetrofitUserInterface;
@@ -89,11 +90,11 @@ public class UserDaoImpl implements IUserDao {
     }
 
     @Override
-    public List<UserCollect> showCollections(String username) {
-        Call<List<UserCollect>> value = service.getCollections(username);
-        List<UserCollect> result = null;
+    public List<CollectionResponse> showCollections(String username) {
+        Call<List<CollectionResponse>> value = service.getCollections(username);
+        List<CollectionResponse> result = null;
         try {
-            Response<List<UserCollect>> response = value.execute();
+            Response<List<CollectionResponse>> response = value.execute();
             result = response.body();
         } catch (IOException e) {
             e.printStackTrace();

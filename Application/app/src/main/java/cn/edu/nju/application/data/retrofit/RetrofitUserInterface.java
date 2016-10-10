@@ -2,6 +2,7 @@ package cn.edu.nju.application.data.retrofit;
 
 import java.util.List;
 
+import cn.edu.nju.application.data.response.CollectionResponse;
 import cn.edu.nju.application.data.response.InsertResponse;
 import cn.edu.nju.application.presentation.model.Post;
 import cn.edu.nju.application.presentation.model.User;
@@ -63,7 +64,7 @@ public interface RetrofitUserInterface {
      * 展示收藏
      */
     @GET("collection/{username}")
-    Call<List<UserCollect>> getCollections(@Path("username") String username);
+    Call<List<CollectionResponse>> getCollections(@Path("username") String username);
 
     /**
      * 展示用户发表过的帖子
