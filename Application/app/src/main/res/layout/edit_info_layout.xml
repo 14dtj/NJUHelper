@@ -10,7 +10,7 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:id="@+id/eavatar"
-        android:src="@mipmap/ic_avatar1"/>
+        android:src="@mipmap/ic_avatar"/>
 
     <TextView
         android:id="@+id/eusername"
