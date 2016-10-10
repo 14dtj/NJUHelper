@@ -1,12 +1,15 @@
 package cn.edu.nju.application.presentation.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,6 +22,7 @@ import java.util.HashMap;
 
 import cn.edu.nju.application.R;
 import cn.edu.nju.application.presentation.activity.MainActivity;
+import cn.edu.nju.application.presentation.activity.SinglePostActivity;
 import cn.edu.nju.application.presentation.presenter.HomeFragmentPresenter;
 import cn.edu.nju.application.presentation.util.Constant;
 
@@ -46,6 +50,16 @@ public class HomeFragment extends BaseFragment implements ViewSwitcher.ViewFacto
                 container, false);
         presenter = new HomeFragmentPresenter(this);
         postList = (ListView) view.findViewById(R.id.list);
+        postList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(view.getContext(), SinglePostActivity.class);
+                intent.putExtra("id", position);
+                startActivity(intent);
+                myFinish();
+            }
+        });
         switcher = (ImageSwitcher) view.findViewById(R.id.theme_switcher);
         linearLayout = (LinearLayout) view.findViewById(R.id.viewGroup);
         presenter.loadPosts();
@@ -141,5 +155,9 @@ public class HomeFragment extends BaseFragment implements ViewSwitcher.ViewFacto
         i.setScaleType(ImageView.ScaleType.CENTER_CROP);
         i.setLayoutParams(new ImageSwitcher.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.FILL_PARENT));
         return i;
+    }
+
+    public void myFinish() {
+        this.getActivity().finish();
     }
 }

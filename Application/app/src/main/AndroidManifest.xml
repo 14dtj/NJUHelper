@@ -27,6 +27,9 @@
         <activity
             android:name=".presentation.activity.AddPostActivity"
             android:label="Application"></activity>
+        <activity
+            android:name=".presentation.activity.SinglePostActivity"
+            android:label="Application"></activity>
     </application>
 
 </manifest>
