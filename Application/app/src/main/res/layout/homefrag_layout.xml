@@ -6,9 +6,17 @@
 
     <ImageSwitcher
         android:layout_width="match_parent"
-        android:layout_height="133dp"
+        android:layout_height="173dp"
         android:id="@+id/theme_switcher"/>
-
+    <LinearLayout
+        android:id="@+id/viewGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    </LinearLayout>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

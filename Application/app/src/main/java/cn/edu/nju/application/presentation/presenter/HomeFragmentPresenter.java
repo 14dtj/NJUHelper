@@ -1,8 +1,5 @@
 package cn.edu.nju.application.presentation.presenter;
 
-import android.graphics.Bitmap;
-import android.os.AsyncTask;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,9 +14,11 @@ import cn.edu.nju.application.presentation.model.Post;
  * Created by tjDu on 2016/10/8.
  */
 
-public class HomeFragmentPresenter {
+public class HomeFragmentPresenter{
     private IPostDao dao;
     private HomeFragment view;
+    private int[] imgIds;
+
 
     public HomeFragmentPresenter(HomeFragment view) {
         dao = DataFactory.getPostDao();
@@ -27,13 +26,14 @@ public class HomeFragmentPresenter {
     }
 
     public void loadPosts() {
+        imgIds = new int[]{R.drawable.post_img2, R.drawable.post_img3, R.drawable.post_img4};
         List<Post> list = dao.showAllPosts();
         ArrayList<HashMap<String, Object>> data = new ArrayList<>();
         for (Post post : list) {
             HashMap<String, Object> map = new HashMap<>();
             map.put("title", post.getTitle());
             map.put("content", post.getContent());
-            map.put("image", dao.getPostImage(post.getId()));
+            map.put("image", imgIds[post.getId() - 2]);
             data.add(map);
         }
 
